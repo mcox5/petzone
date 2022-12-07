@@ -1,13 +1,4 @@
 Rails.application.routes.draw do
-  get 'appointments/index'
-  get 'appointments/show'
-  get 'appointments/create'
-  get 'appointments/new'
-  get 'appointments/edit'
-  get 'appointments/update'
-  get 'appointments/destroy'
-  get 'treatments/index'
-  get 'treatments/show'
   get 'treatments/create'
   get 'treatments/new'
   get 'treatments/edit'
@@ -16,11 +7,11 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
   resources :pets do
-    resources :treatments, only: [:new, :create]
-    resources :appointments, only: [:new, :create]
+    resources :treatments, only: %i[new create]
+    resources :appointments, only: %i[new create index]
   end
-  resources :treatments, only: [:show, :edit, :update, :destroy]
-  resources :appointments, only: [:index, :show, :edit, :update, :destroy]
+  resources :treatments, only: %i[show edit update destroy]
+  resources :appointments, only: %i[show edit update destroy]
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
