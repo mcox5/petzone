@@ -1,2 +1,4 @@
 <h1>Es la vista del index</h1>
-<p><%= @pets.name %></p>
+<% @pets.each do |pet| %>
+  <p><%=pet.name%></p>
+<% end %>
