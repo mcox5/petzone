@@ -11,6 +11,6 @@ Pet.destroy_all
 
 puts "Creando Perros"
 puts "..."
-Pet.create({ name: "Oreo", breed: "border colie", birthday: "07/11/2019", gender: "female", weight: 20, allergies: "none", color: "black and white", chiped: false, specie: "dog", user_id: 2 })
+Pet.create({ name: "Oreo", breed: "border colie", birthday: "07/11/2019", gender: "female", weight: 20, allergies: "none", color: "black and white", chiped: false, specie: "dog", user_id: 1 })
 Pet.create({ name: "Lara", breed: "Vizla", birthday: "07/11/2019", gender: "female", weight: 20, allergies: "none", color: "black and white", chiped: false, specie: "dog", user_id: 1 })
 puts "Perros creados!"
