@@ -80,3 +80,4 @@ end
 gem "cloudinary"
 gem "pundit"
 gem "faker"
+gem "open-uri"
