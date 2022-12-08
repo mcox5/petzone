@@ -1,2 +1,5 @@
-<h1>Es la vista del index</h1>
-
+<h1>Estos son los perros de <%= @pets.first.user.email %></h1>
+<% @pets.each do |pet| %>
+<p><%= link_to "#{pet.name}", pet_path(pet) %></p>
+<% end %>
+<h2>Recordatorios: Ver como anexar lo de Google Calendar</h2>

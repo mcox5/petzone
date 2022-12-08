@@ -76,7 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_022340) do
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "updated_at", null: falsea
   end
 
   create_table "pets", force: :cascade do |t|
