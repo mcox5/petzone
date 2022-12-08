@@ -1,5 +1,6 @@
 class AppointmentsController < ApplicationController
   before_action :set_pet, only: %i[new create]
+  # El index no tiene vista creada ya que mostraremos la info en el show de pets
   def index
     @appointments = policy_scope(Appointment).joins(:pet).where('pet.id = appointment.id')
   end
@@ -44,10 +45,11 @@ class AppointmentsController < ApplicationController
 
   def destroy
     @appointment = Appointment.find(params[:id])
+    @pet = @appointment.pet
     authorize @appointment
     @appointment.destroy
     # No need for app/views/restaurants/destroy.html.erb
-    redirect_to apointments_path, status: :see_other
+    redirect_to pet_path(@pet), status: :see_other
   end
 
   private

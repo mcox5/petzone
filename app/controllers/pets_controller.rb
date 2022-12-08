@@ -7,6 +7,10 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
     @treatments = @pet.treatments
+    @appointments = @pet.appointments
+    @vaccines = @pet.vaccines
+    @dewormings = @pet.dewormings
+    @exams = @pet.exams
     authorize @pet
   end
 
