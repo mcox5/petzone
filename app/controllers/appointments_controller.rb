@@ -1,7 +1,7 @@
 class AppointmentsController < ApplicationController
   before_action :set_pet, only: %i[new create]
   def index
-    @appointments = policy_scope(Appointment)
+    @appointments = policy_scope(Appointment).joins(:pet).where('pet.id = appointment.id')
   end
 
   def show
