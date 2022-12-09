@@ -2,6 +2,11 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
+    if params[:query].present?
+      @pets = policy_scope(Pet.pets_search(params[:query]))
+    else
+      @pets = policy_scope(Pet)
+    end
   end
 
   def show
