@@ -1,2 +1,14 @@
-<h1>Appointments#new</h1>
-<p>Find me in app/views/appointments/new.html.erb</p>
+Aca debe ir el form para crear cita con sus vacunas respectivas
+
+<%= form_for @appointment do |f| %>
+   <%= f.text_field :veterinary_name %>
+   <%= f.text_field :doctor_name %>
+   <%= f.fields_for :applies do |apply| %>
+       <%= apply.association :vaccine %>
+       <%= apply.association :deworming %>
+       <%= apply.association :exam %>
+       <%= apply.input :date %>
+   <% end %>
+
+   <%= f.submit %>
+<% end %>

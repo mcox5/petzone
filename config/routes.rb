@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
   resources :treatments, only: %i[edit update destroy]
   resources :appointments, only: %i[edit update destroy]
-
+  get "/calendar", to: "pages#calendar", as: "calendar"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
