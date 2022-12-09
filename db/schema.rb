@@ -77,6 +77,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+
+
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_meetings_on_user_id"
+
   end
 
   create_table "pets", force: :cascade do |t|

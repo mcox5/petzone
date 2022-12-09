@@ -81,4 +81,6 @@ gem "cloudinary"
 gem "pundit"
 gem "faker"
 gem "open-uri"
+gem "pg_search"
 gem "simple_calendar", "~> 2.4"
+
