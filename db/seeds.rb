@@ -1,5 +1,5 @@
 # 1: Crear Users (3 Usuarios distintos)
-
+require "open-uri"
 puts "creando usuarios"
 
 User.create(
@@ -14,6 +14,7 @@ puts "Usuarios creados"
 # 2: Crear Pets (10 pets)
 puts "Creando Perros..."
 10.times do
+  file = URI.open("https://upload.wikimedia.org/wikipedia/commons/c/c2/Australianshepherd01.jpg")
   pet = Pet.new(
     name: Faker::Creature::Dog.name,
     breed: Faker::Creature::Dog.breed,
@@ -26,8 +27,11 @@ puts "Creando Perros..."
     specie: "dog",
     user_id: rand(1..2)
   )
+  pet.photos.attach(io: file, filename: "nes.png", content_type: "image/jpg" )
   pet.save!
 end
+
+
 puts "Perros creados"
 # 3: Crear tratamientos (3 tratamientos)
 puts "Creando tratamientos..."
@@ -107,4 +111,3 @@ puts "creando aplicaciones de vacunas, examenes y desparacitaciones"
   )
   apply.save!
 end
-
