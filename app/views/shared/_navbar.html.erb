@@ -1,10 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+     <div class="d-flex center">
+        <div class='container py-3'>
+          <div>
+            <%= form_with url: pets_path, class: 'd-flex', method: :get do %>
+              <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: '¿Qué mascota buscas?' %>
+              <%= submit_tag 'Buscar', class: 'btn btn-outline-search' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <!--iconos pets-->
     <div class="relative w-[20px] overflow-hidden">
       <div class="w-full overflow-x-scroll">
