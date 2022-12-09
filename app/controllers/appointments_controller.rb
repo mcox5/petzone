@@ -13,6 +13,7 @@ class AppointmentsController < ApplicationController
   def new
     @appointment = Appointment.new # Needed to instantiate the form_with
     @appointment.pet = @pet
+    @appointment.applies.build
     authorize @appointment
   end
 
@@ -24,7 +25,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
     # No need for app/views/restaurants/create.html.erb
     # Tener OJOOOOOO de adonde se tendría que redireccionar
-      redirect_to appointments_path(@pet)
+      redirect_to pets_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -55,7 +56,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:veterinary_name, :doctor_name)
+    params.require(:appointment).permit(:veterinary_name, :doctor_name, applies_attributes: [:vaccine_id, :deworming_id, :exam_id, :date])
   end
 
   def set_pet
