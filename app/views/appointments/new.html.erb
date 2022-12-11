@@ -1,14 +1,14 @@
 Aca debe ir el form para crear cita con sus vacunas respectivas
 
-<%= form_for @appointment do |f| %>
-   <%= f.text_field :veterinary_name %>
-   <%= f.text_field :doctor_name %>
-   <%= f.fields_for :applies do |apply| %>
-       <%= apply.association :vaccine %>
-       <%= apply.association :deworming %>
-       <%= apply.association :exam %>
-       <%= apply.input :date %>
-   <% end %>
+<%= simple_form_for([@pet, @appointment]) do |f| %>
+  <%= f.input :veterinary_name %>
+  <%= f.input :doctor_name %>
+  <%= simple_fields_for :apply do |p| %>
+    <%= p.input :vaccine_id %>
+    <%= p.input :deworming_id %>
+    <%= p.input :date %>
 
-   <%= f.submit %>
+  <% end %>
+
+  <%= f.submit %>
 <% end %>

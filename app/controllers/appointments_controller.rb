@@ -7,20 +7,20 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @appointment.build_apply
     authorize @appointment
   end
 
   def new
     @appointment = Appointment.new # Needed to instantiate the form_with
     @appointment.pet = @pet
-    @appointment.applies.build
+    # @appointment.applies.build
     authorize @appointment
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
     @appointment.pet = @pet
-    @appointment.user = current_user
     authorize @appointment
     if @appointment.save
     # No need for app/views/restaurants/create.html.erb
@@ -56,7 +56,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:veterinary_name, :doctor_name, applies_attributes: [:vaccine_id, :deworming_id, :exam_id, :date])
+    params.require(:appointment).permit(:veterinary_name, :doctor_name)
   end
 
   def set_pet
