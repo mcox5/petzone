@@ -7,4 +7,10 @@ class Pet < ApplicationRecord
   has_many :exams, through: :applies
   has_many :dewormings, through: :applies
   has_many_attached :photos
+  include PgSearch::Model
+  pg_search_scope :pets_search,
+  against: %i[ name breed birthday gender weight spayed allergies color chiped specie ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
