@@ -1,4 +1,5 @@
 
+
 <p><%= @pet.treatments.first %></p>
 
 <div class="container">
@@ -13,3 +14,42 @@
     </div>
   </div>
 </div>
+
+<h1>Podemos acceder a la info de las citas, desparacitaciones, vacunas, examenes y tratamientos</h1>
+<h2>Esta es la info de <%= @pet.name %></h2>
+
+<h3>Tratamientos</h3>
+<% @treatments.each do |treatment| %>
+  <ol>
+    <li><%= treatment.name %><%= link_to "Ver detalles", pet_treatment_path(@pet, treatment) %> </li>
+  </ol>
+<% end %>
+<%= link_to "Agregar nuevo tratamiento", new_pet_treatment_path(@pet) %>
+<h3>Citas</h3>
+<% @appointments.each do |appointment| %>
+  <ol>
+    <li><%= appointment.veterinary_name %> <%= link_to "Eliminar cita", appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %> <%= link_to "Editar cita", edit_appointment_path(appointment) %></li>
+  </ol>
+<% end %>
+<%= link_to "Agregar nueva cita", new_pet_appointment_path(@pet) %>
+<h3>Vacunas</h3>
+<% @vaccines.each do |vaccine| %>
+  <ol>
+    <li><%= vaccine.name %> </li>
+  </ol>
+<% end %>
+<h3>Desparacitaciones</h3>
+<% @dewormings.each do |deworming| %>
+  <ol>
+    <li><%= deworming.name %></li>
+  </ol>
+<% end %>
+<h3>Examenes</h3>
+<% @exams.each do |exam| %>
+  <ol>
+    <li><%= exam.name %></li>
+  </ol>
+<% end %>
+
+<%= link_to "Volver a tus mascotas", pets_path %>
+
