@@ -7,15 +7,15 @@ class AppointmentPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    record.pet.user == user
   end
 
   def new?
-    true
+    record.pet.user == user
   end
 
   def create?
-    true
+    new?
   end
 
   def edit?

@@ -27,7 +27,9 @@ puts "Creando Perros..."
     specie: "dog",
     user_id: rand(1..2)
   )
+
   pet.photos.attach(io: file, filename: "nes.png", content_type: "image/jpg" )
+
   pet.save!
 end
 

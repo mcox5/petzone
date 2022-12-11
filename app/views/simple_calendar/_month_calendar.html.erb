@@ -1,0 +1,32 @@
+<div class="simple-calendar container">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="calendar-heading my-2">
+      <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: 'btn btn-outline-primary' %>
+      <span class="calendar-title btn btn-primary"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+      <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: 'btn btn-outline-primary' %>
+    </div>
+    <%# Crear boton de agregar meeting? %>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <% date_range.slice(0, 7).each do |day| %>
+          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+        <% end %>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% date_range.each_slice(7) do |dates| %>
+        <tr>
+          <% dates.each do |date| %>
+            <%= content_tag :td, class: calendar.td_classes_for(date) do %>
+              <% passed_block.call date.day, sorted_events.fetch(date, []) %>
+            <% end %>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

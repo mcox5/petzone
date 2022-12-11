@@ -7,7 +7,7 @@ class TreatmentPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    record.pet.user == user # Gracias a device podemos llegar y poner solo user
   end
 
   def new?
