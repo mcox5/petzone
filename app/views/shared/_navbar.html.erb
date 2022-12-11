@@ -28,13 +28,17 @@
   </div>
 </nav>
 <!--New Navbar-->
-<nav class="navbar2">
+<nav class="navbar2 d-flex justify-content-between">
 	<div class="container-fluid">
 		<!-- Nav Header -->
 		<div class="navbar-header">
-			<a class="navbar-brand" href="#"><span class="fa fa-home"></span><span class="link"> Home</span></a>
+			<a class="navbar-brand" href="<%=treatments_new_path%>"><span class="fa fa-home"></span><span class="link"> Home</span></a>
       <a class="navbar-brand" href="#"><span class="fa fa-calendar"></span><span class="link"> Calendario</span></a>
 			<a class="navbar-brand" href="#"><span class="fa fa-folder"></span><span class="link"> Documentación</span></a>
     </div>
 	</div>
+  <div class="longs d-flex mx-3 gap-3">
+    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  </div>
 </nav>
