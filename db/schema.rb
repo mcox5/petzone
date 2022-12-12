@@ -70,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_12_024552) do
     t.date "date"
     t.bigint "pet_id", null: false
     t.index ["pet_id"], name: "index_exams_on_pet_id"
+
   end
 
   create_table "meetings", force: :cascade do |t|
