@@ -22,3 +22,11 @@
   width: 200px;
   border-radius: 25%;
 }
+
+.hover{
+  transition: all 0.5s ease-out;
+}
+.hover:hover{
+transform: scale(1.05);
+box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+}
