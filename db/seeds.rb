@@ -54,7 +54,8 @@ puts "creando Appointments"
   appointment = Appointment.new(
     veterinary_name: Faker::Company.name,
     doctor_name: Faker::Name.name,
-    pet_id: rand(1..10)
+    pet_id: rand(1..10),
+    date: Faker::Date.between(from: '2021-02-23', to: '2021-11-23')
   )
   appointment.save!
 end
@@ -70,7 +71,9 @@ vaccine_name = ["vacuna parvovirosis", "vacuna moquillo", "vacuna polivalentes",
 vaccine_name.each do |vaccine|
   new_vaccine = Vaccine.new(
     name: vaccine,
-    interval: rand(3..10)
+    interval: rand(3..10),
+    date: Faker::Date.between(from: '2021-02-23', to: '2021-11-23'),
+    pet_id: rand(1..10)
   )
   new_vaccine.save!
 end
@@ -84,7 +87,9 @@ deworming_name = ["desparasitante parvovirosis", "desparasitante moquillo", "des
 deworming_name.each do |deworming|
   new_deworming = Deworming.new(
     name: deworming,
-    interval: rand(3..10)
+    interval: rand(3..10),
+    date: Faker::Date.between(from: '2021-02-23', to: '2021-11-23'),
+    pet_id: rand(1..10)
   )
   new_deworming.save!
 end
@@ -96,20 +101,9 @@ exams_name = ["pata de atras", "nariz", "oreja", "ecografía", "radiografía de 
 exams_name.each do |exam|
   new_exam = Exam.new(
     name: exam,
-    description: "Radiografía tomada por precaución"
+    description: "Radiografía tomada por precaución",
+    date: Faker::Date.between(from: '2021-02-23', to: '2021-11-23'),
+    pet_id: rand(1..10)
   )
   new_exam.save!
-end
-
-# 6: Crear applies (20 applies)
-puts "creando aplicaciones de vacunas, examenes y desparacitaciones"
-20.times do
-  apply = Apply.new(
-    date: Faker::Date.between(from: '2022-02-23', to: '2022-11-30'),
-    vaccine_id: rand(1..5),
-    deworming_id: rand(1..5),
-    exam_id: rand(1..5),
-    appointment_id: rand(1..20)
-  )
-  apply.save!
 end
