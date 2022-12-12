@@ -13,6 +13,7 @@ class VaccinesController < ApplicationController
     if @vaccine.save
     # No need for app/views/restaurants/create.html.erb
     # Tener OJOOOOOO de adonde se tendría que redireccionar
+    # Aca instancio la variable de meeting y le asigno sus valores segun la vacuna
       redirect_to pet_path(@pet)
     else
       render :new, status: :unprocessable_entity

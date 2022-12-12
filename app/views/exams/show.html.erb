@@ -1,2 +1,4 @@
-<h1>Exams#show</h1>
-<p>Find me in app/views/exams/show.html.erb</p>
+<h1><%= @exam.name %></h1>
+<p><%= @exam.description %></p>
+<p><%= @exam.date %></p>
+<%# <%= cl_image_tag @exam.photos.key.first, height: 300, width:400 %> Mostrar Foto del examen

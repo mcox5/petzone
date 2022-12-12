@@ -1,1 +1,6 @@
-<%= render "form", pet: @appointment.pet, appointment: @appointment %>
+<%= simple_form_for(@appointment) do |f| %>
+  <%= f.input :veterinary_name %>
+  <%= f.input :doctor_name %>
+  <%= f.input :date %>
+  <%= f.submit %>
+<% end %>

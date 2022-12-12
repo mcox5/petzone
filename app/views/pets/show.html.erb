@@ -46,8 +46,9 @@
 <h3>Examenes</h3>
 <% @exams.each do |exam| %>
   <ol>
-    <li><%= exam.name %></li>
+    <li><%= exam.name %> <%= link_to "Editar", edit_exam_path(exam) %><%= link_to "Eliminar examen", exam_path(exam), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %> <%= link_to "Ver detalles", pet_exam_path(@pet, exam) %></li>
   </ol>
 <% end %>
+<%= link_to "Agregar examen", new_pet_exam_path(@pet)  %>
 
 <%= link_to "Volver a tus mascotas", pets_path %>
