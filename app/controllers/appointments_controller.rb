@@ -25,7 +25,7 @@ class AppointmentsController < ApplicationController
     if @appointment.save
     # No need for app/views/restaurants/create.html.erb
     # Tener OJOOOOOO de adonde se tendría que redireccionar
-      redirect_to pets_path
+      redirect_to pet_path(@pet)
     else
       render :new, status: :unprocessable_entity
     end
@@ -56,7 +56,7 @@ class AppointmentsController < ApplicationController
   private
 
   def appointment_params
-    params.require(:appointment).permit(:veterinary_name, :doctor_name)
+    params.require(:appointment).permit(:veterinary_name, :doctor_name, :date)
   end
 
   def set_pet

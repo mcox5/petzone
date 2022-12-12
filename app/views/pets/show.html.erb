@@ -1,7 +1,3 @@
-
-
-<p><%= @pet.treatments.first %></p>
-
 <div class="container">
   <div class="row">
     <div class="body rounded-4"></div>
@@ -21,7 +17,7 @@
 <h3>Tratamientos</h3>
 <% @treatments.each do |treatment| %>
   <ol>
-    <li><%= treatment.name %><%= link_to "Ver detalles", pet_treatment_path(@pet, treatment) %> </li>
+    <li><%= treatment.name %><%= link_to "Editar", edit_treatment_path(treatment) %> <%= link_to "Eliminar tratamiento", treatment_path(treatment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></li>
   </ol>
 <% end %>
 <%= link_to "Agregar nuevo tratamiento", new_pet_treatment_path(@pet) %>
@@ -33,23 +29,26 @@
 <% end %>
 <%= link_to "Agregar nueva cita", new_pet_appointment_path(@pet) %>
 <h3>Vacunas</h3>
+<ol>
 <% @vaccines.each do |vaccine| %>
-  <ol>
-    <li><%= vaccine.name %> </li>
-  </ol>
+    <li><%= vaccine.name %> <%= link_to "Editar vacuna", edit_vaccine_path(vaccine) %><%= link_to "Eliminar vacuna", vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> </li>
 <% end %>
+</ol>
+<%= link_to "Agregar nueva vacuna", new_pet_vaccine_path(@pet) %>
 <h3>Desparacitaciones</h3>
 <% @dewormings.each do |deworming| %>
   <ol>
-    <li><%= deworming.name %></li>
+    <li><%= deworming.name %><%= link_to "Editar", edit_deworming_path(deworming) %> <%= link_to "Eliminar desparacitacion", deworming_path(deworming), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %></li>
   </ol>
 <% end %>
+<%= link_to "Agregar nueva desparasitación", new_pet_deworming_path(@pet) %>
+
 <h3>Examenes</h3>
 <% @exams.each do |exam| %>
   <ol>
-    <li><%= exam.name %></li>
+    <li><%= exam.name %> <%= link_to "Editar", edit_exam_path(exam) %><%= link_to "Eliminar examen", exam_path(exam), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %> <%= link_to "Ver detalles", pet_exam_path(@pet, exam) %></li>
   </ol>
 <% end %>
+<%= link_to "Agregar examen", new_pet_exam_path(@pet)  %>
 
 <%= link_to "Volver a tus mascotas", pets_path %>
-
