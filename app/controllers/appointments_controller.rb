@@ -25,6 +25,11 @@ class AppointmentsController < ApplicationController
     if @appointment.save
     # No need for app/views/restaurants/create.html.erb
     # Tener OJOOOOOO de adonde se tendría que redireccionar
+      @meeting = Meeting.new
+      @meeting.name = @appointment.veterinary_name
+      @meeting.start_time = @appointment.date
+      @meeting.user = @appointment.pet.user
+      @meeting.save
       redirect_to pet_path(@pet)
     else
       render :new, status: :unprocessable_entity
