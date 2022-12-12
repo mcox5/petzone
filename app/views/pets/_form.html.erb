@@ -2,7 +2,7 @@
   <%= f.input :name %>
   <%= f.input :breed %>
   <%= f.input :birthday %>
-  <%= f.input :gender %>
+  <%= f.input :gender, collection: %w[Macho Hembra] %>
   <%= f.input :weight %>
   <%= f.input :spayed %>
   <%= f.input :allergies%>
