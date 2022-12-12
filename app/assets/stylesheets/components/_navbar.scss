@@ -152,7 +152,12 @@
 	}
 }
 //overflow
-.overflow-hidden {
-  overflow-x: scroll;
-  overflow: hidden;
+.nav-icons {
+  overflow-x: scroll hidden;
+  border: 1px solid black;
+  height: 90px;
+}
+//long in out
+.long {
+  color: white
 }

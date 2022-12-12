@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_024552) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,26 +42,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "applies", force: :cascade do |t|
-    t.date "date"
-    t.bigint "vaccine_id", null: false
-    t.bigint "deworming_id", null: false
-    t.bigint "exam_id", null: false
-    t.bigint "appointment_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["appointment_id"], name: "index_applies_on_appointment_id"
-    t.index ["deworming_id"], name: "index_applies_on_deworming_id"
-    t.index ["exam_id"], name: "index_applies_on_exam_id"
-    t.index ["vaccine_id"], name: "index_applies_on_vaccine_id"
-  end
-
   create_table "appointments", force: :cascade do |t|
     t.string "veterinary_name"
     t.string "doctor_name"
     t.bigint "pet_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
     t.index ["pet_id"], name: "index_appointments_on_pet_id"
   end
 
@@ -70,6 +57,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
     t.integer "interval"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.bigint "pet_id", null: false
+    t.index ["pet_id"], name: "index_dewormings_on_pet_id"
   end
 
   create_table "exams", force: :cascade do |t|
@@ -77,6 +67,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.bigint "pet_id", null: false
+    t.index ["pet_id"], name: "index_exams_on_pet_id"
+
   end
 
   create_table "meetings", force: :cascade do |t|
@@ -133,16 +127,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_210543) do
     t.integer "interval"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.bigint "pet_id", null: false
+    t.index ["pet_id"], name: "index_vaccines_on_pet_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "applies", "appointments"
-  add_foreign_key "applies", "dewormings"
-  add_foreign_key "applies", "exams"
-  add_foreign_key "applies", "vaccines"
   add_foreign_key "appointments", "pets"
+  add_foreign_key "dewormings", "pets"
+  add_foreign_key "exams", "pets"
   add_foreign_key "meetings", "users"
   add_foreign_key "pets", "users"
   add_foreign_key "treatments", "pets"
+  add_foreign_key "vaccines", "pets"
 end
