@@ -1,2 +1,77 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="row justify-content-center" id="carousel-back">
+  <div class="col-10" >
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.pexels.com/photos/8498519/pexels-photo-8498519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100 rounded-3" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/10117271/pexels-photo-10117271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100 rounded-3" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/9040613/pexels-photo-9040613.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100 rounded-3" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/7107434/pexels-photo-7107434.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100 rounded-3" alt="...">
+        </div><div class="carousel-item">
+          <img src="https://images.pexels.com/photos/569170/pexels-photo-569170.jpeg" class="d-block w-100 rounded-3" alt="...">
+        </div><div class="carousel-item">
+          <img src="https://images.pexels.com/photos/7671876/pexels-photo-7671876.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="d-block w-100 rounded-3" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div>
+  <hr>
+  <H1 class="text-center mb-4" >Bienvenido a Petzone </H1>
+  <p class="text-center"> Somos Petzone, en nuestra App podrás registrar todo lo relacionado a tu mascota y agendarlo para no olvidarlo! </p>
+  <p class="text-center"> Regístrate y comienza disfrutar la compañia de tu mejor amigo </p>
+  <hr>
+  <div class="row justify-content-center">
+  <div class="col-10 col-sm-5 mb-5">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/2041398/pexels-photo-2041398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3>Almacena documentos de tu mascota</h3>
+        <p class="card-text">
+          Carnet de vacunas, documentación de tratamientos médicos, todo en un solo lugar.
+          <br>
+          Sube, almacena y revisa los documentos más importantes de tu mascota y deja que nuestro programa se encargue de todo por tí
+        </p>
+        <%= link_to "Descubre más", pets_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-10 col-sm-5">
+    <div class="card">
+      <img src="https://images.pexels.com/photos/8830696/pexels-photo-8830696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3>Agenda tus eventos o citas con tu mascota</h3>
+        <p class="card-text">
+          Citas con el veterinario, controles médicos y mucho más.
+          <br>
+          Agenda todo los eventos o recordatorios que necesites para que no olvides todo lo que debes hacer por tu mejor amigo.
+        </p>
+        <%= link_to "Agenda aquí", calendar_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>

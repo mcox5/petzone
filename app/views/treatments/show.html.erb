@@ -1,2 +1,6 @@
-<h1>Se muestra un tratamiento en especiífico</h1>
-<p>Find me in app/views/treatments/show.html.erb</p>
+
+<h1> Detalles del tratamiento de: <%= @treatment.pet.name %></h1>
+<p> El tratamiento es para: <%= @treatment.name %> </p>
+<p> Su última aplicación fue en: <%= @treatment.last_application %></p>
+<p> El tiempo entre aplicación es de: <%= @treatment.interval %> días</p>
+<p><%= link_to "Volver a tu mascota", pet_path(@treatment.pet) %></p>

@@ -1,0 +1,14 @@
+<%= simple_form_for(pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :breed %>
+  <%= f.input :birthday %>
+  <%= f.input :gender %>
+  <%= f.input :weight %>
+  <%= f.input :spayed %>
+  <%= f.input :allergies%>
+  <%= f.input :color %>
+  <%= f.input :chiped %>
+  <%= f.input :specie %>
+  <%= f.input :photos, as: :file %>
+  <%= f.submit %>
+<% end %>

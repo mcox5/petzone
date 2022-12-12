@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
-  get 'treatments/create'
-  get 'treatments/new'
-  get 'treatments/edit'
-  get 'treatments/update'
-  get 'treatments/destroy'
   devise_for :users
   root to: "pages#home"
   resources :pets do
     resources :treatments, only: %i[new create]
-    resources :appointments, only: %i[new create index]
+    resources :appointments, only: %i[new create]
+    resources :vaccines, only: %i[new create]
+    resources :exams, only: %i[new create show]
+    resources :dewormings, only: %i[new create]
   end
-  resources :treatments, only: %i[show edit update destroy]
-  resources :appointments, only: %i[show edit update destroy]
+  resources :treatments, only: %i[edit update destroy]
+  resources :appointments, only: %i[edit update destroy]
+  resources :vaccines, only: %i[edit update destroy]
+  resources :exams, only: %i[edit update destroy]
+  resources :dewormings, only: %i[edit update destroy]
 
+  get "/calendar", to: "pages#calendar", as: "calendar"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

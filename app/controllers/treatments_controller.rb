@@ -16,9 +16,9 @@ class TreatmentsController < ApplicationController
   end
 
   def create
-    @treatment = Treatment.new(pet_params)
+    @treatment = Treatment.new(treatment_params)
     @treatment.pet = @pet
-    @treatment.user = current_user
+    @treatment.pet.user = current_user
     authorize @treatment
     if @treatment.save
     # No need for app/views/restaurants/create.html.erb
@@ -47,7 +47,7 @@ class TreatmentsController < ApplicationController
     authorize @treatment
     @treatment.destroy
     # No need for app/views/restaurants/destroy.html.erb
-    redirect_to pets_path, status: :see_other
+    redirect_to pet_path(@treatment.pet), status: :see_other
   end
 
   private

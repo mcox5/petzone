@@ -1,3 +1,3 @@
 class Vaccine < ApplicationRecord
-  has_many :applies
+  belongs_to :pet
 end
