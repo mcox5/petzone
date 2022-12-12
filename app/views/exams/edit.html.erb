@@ -1,0 +1,7 @@
+<%= simple_form_for(@exam) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :date %>
+  <%= f.input :photos, as: :file %>
+  <%= f.submit %>
+<% end %>

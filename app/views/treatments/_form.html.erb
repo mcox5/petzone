@@ -1,0 +1,6 @@
+<%= simple_form_for [pet, treatment] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :last_application %>
+  <%= f.input :interval %>
+  <%= f.submit "Guardar tratamiento", class: "btn btn-primary" %>
+<% end %>
