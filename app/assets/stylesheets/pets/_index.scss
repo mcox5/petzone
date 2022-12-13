@@ -1,24 +1,8 @@
 
-.recordatorios{
-  background: #BAD36D;
+.hover{
+  transition: all 0.5s ease-out;
 }
-
-.avatares {
-  background: #BAD36D;
-}
-
-.bienvenidos h1 {
-  font-family: 'Mochiy Pop P One';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 55px;
-
-  color: #000000;
-}
-
-
-.perfil img {
-  width: 200px;
-  border-radius: 25%;
+.hover:hover{
+transform: scale(1.05);
+box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }

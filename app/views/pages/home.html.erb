@@ -39,15 +39,16 @@
   </div>
 </div>
 
-<div>
-  <hr>
+<div class= "card" id="welcome-back">
+  <br>
   <H1 class="text-center mb-4" >Bienvenido a Petzone </H1>
   <p class="text-center"> Somos Petzone, en nuestra App podrás registrar todo lo relacionado a tu mascota y agendarlo para no olvidarlo! </p>
   <p class="text-center"> Regístrate y comienza disfrutar la compañia de tu mejor amigo </p>
-  <hr>
-  <div class="row justify-content-center">
-  <div class="col-10 col-sm-5 mb-5">
-    <div class="card">
+  <br>
+</div>
+<br>
+<div class="card-group m-4">
+    <div class="card mx-1">
       <img src="https://images.pexels.com/photos/2041398/pexels-photo-2041398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
       <div class="card-body">
         <h3>Almacena documentos de tu mascota</h3>
@@ -56,12 +57,10 @@
           <br>
           Sube, almacena y revisa los documentos más importantes de tu mascota y deja que nuestro programa se encargue de todo por tí
         </p>
-        <%= link_to "Descubre más", pets_path, class: "btn btn-primary" %>
+        <%= link_to "Ve tus mascotas", pets_path, class: "btn btn-primary" %>
       </div>
     </div>
-  </div>
-  <div class="col-10 col-sm-5">
-    <div class="card">
+    <div class="card mx-1">
       <img src="https://images.pexels.com/photos/8830696/pexels-photo-8830696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="card-img-top" alt="...">
       <div class="card-body">
         <h3>Agenda tus eventos o citas con tu mascota</h3>
@@ -70,8 +69,9 @@
           <br>
           Agenda todo los eventos o recordatorios que necesites para que no olvides todo lo que debes hacer por tu mejor amigo.
         </p>
+        <br>
         <%= link_to "Agenda aquí", calendar_path, class: "btn btn-primary" %>
       </div>
     </div>
-  </div>
+</div>
 </div>

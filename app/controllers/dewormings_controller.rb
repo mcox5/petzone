@@ -13,6 +13,11 @@ class DewormingsController < ApplicationController
     if @deworming.save
     # No need for app/views/restaurants/create.html.erb
     # Tener OJOOOOOO de adonde se tendría que redireccionar
+      @meeting = Meeting.new
+      @meeting.name = @deworming.name
+      @meeting.start_time = @deworming.date + @deworming.interval
+      @meeting.user = @deworming.pet.user
+      @meeting.save
       redirect_to pet_path(@pet)
     else
       render :new, status: :unprocessable_entity

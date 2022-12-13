@@ -1,33 +1,28 @@
-
-<div class="container-fluid">
+<div class="bg-success p-2 text-dark bg-opacity-25">
+<h1>Bienvenido <%= @pets.first.user.email %></h1>
+<h3>Estas son tus mascotas:</h3>
     <div class="row">
-      <div class="bienvenidos col-10">
-        <h1>Bienvenido <%= @pets.first.user.email %></h1>
-        <h3>seleccione su mascota:</h3>
-        <% @pets.each do |pet| %>
-          <p><%= link_to "#{pet.name}", pet_path(pet) %></p>
-        <% end %>
+      <% @pets.each do |pet| %>
+      <div class="col-3 col-lg-3">
+        <div class="mx-auto ">
+          <% if pet.photos.first.key.present? %>
+            <div class="d-flex justify-content-center mt-5">
+              <%= link_to pet_path(pet) do %>
+              <%= cl_image_tag pet.photos.first.key,height: 150, width: 150, crop: :fill, class:"rounded-circle img-fluid hover" %>
+              <% end %>
+
+            </div>
+          <% end %>
+          <div class="card-trip-infos mt-2">
+            <div>
+              <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link" %></h5>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="petzone col-2">
-        <h1>Petzone</h1>
-      </div>
+      <% end %>
     </div>
-</div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="recordatorios rounded-4"></div>
-  </div>
-    <div class="row">
-      <div class="card avatares col-1 rounded-4 p-2 ">
-          <div class="perfil">
-            <img src="https://bit.ly/3VG02xC" alt="">
-            <img src="https://bit.ly/3VG02xC" alt="">
-          </div>
-          <div class="perfil">
-            <img src="https://bit.ly/3VG02xC" alt="">
-          </div>
-      </div>
+    <div class="container">
+    <%= raise %>
     </div>
 </div>
