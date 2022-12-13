@@ -2,6 +2,7 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
+    @meetings = Meeting.all
     if params[:query].present?
       @pets = policy_scope(Pet.pets_search(params[:query]))
     else
