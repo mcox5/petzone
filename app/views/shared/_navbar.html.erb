@@ -1,46 +1,24 @@
-
-
-<nav class="navbar-expand-lg navbar-light bg-light container-fluid">
-  <div class="row justify-content-between">
-    <!--<div class="container-fluid">-->
-    <div class="col-2">
-      <a class="navbar-brand" href="#">Navbar</a>
-    </div>
-    <div class="col-4">
-      <div class="d-flex justify-content-center">
-        <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: '¿Qué mascota buscas?' %>
-        <%= submit_tag 'Buscar', class: 'btn btn-outline-search' %>
-      </div>
-    </div>
-    <!--</div>-->
-    <div class="col-2">
-        <!--iconos pets-->
-        <div class="relative w-[20px] overflow-hidden">
-          <div class="w-full overflow-x-scroll">
-            <div class="nav-icons w-fit flex px-3 gap-4">
-              <% if user_signed_in? %>
-                <% current_user.pets.each do |pet|%>
-                  <%= cl_image_tag pet.photos.first.key, class: "avatar" %>
-                <% end %>
-              <% end %>
-            </div>
-            <div class="absolute top-0 left-0 bg-gradient-to-r from-gray-800 h-full w-1/6"></div>
-            <div class="absolute top-0 right-0 bg-gradient-to-l from-gray-800 h-full w-1/6"></div>
-          </div>
-        </div>
+<nav class="navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div class="d-flex center">
+     <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: '¿Qué mascota buscas?' %>
+     <%= submit_tag 'Buscar', class: 'btn btn-outline-search' %>
     </div>
   </div>
 </nav>
 <!--New Navbar-->
 <nav class="navbar2 d-flex justify-content-between">
-	<div class="container-fluid">
-		<!-- Nav Header -->
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#"><span class="fa fa-home"></span><span class="link"> Home</span></a>
+  <div class="container-fluid">
+    <!-- Nav Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="fa fa-home"></span><span class="link"> Home</span></a>
       <a class="navbar-brand" href="#"><span class="fa fa-calendar"></span><span class="link"> Calendario</span></a>
-			<a class="navbar-brand" href="#"><span class="fa fa-folder"></span><span class="link"> Documentación</span></a>
+      <a class="navbar-brand" href="#"><span class="fa fa-folder"></span><span class="link"> Documentación</span></a>
+      <a class="navbar-brand" href="#"><span class="fa fa-dog"></span><span class="link"> Pets</span></a>
+
     </div>
-	</div>
+  </div>
   <div class="longs d-flex mx-3 gap-3">
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
