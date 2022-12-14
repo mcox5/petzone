@@ -18,6 +18,7 @@ class VaccinesController < ApplicationController
       @meeting.name = @vaccine.name
       @meeting.start_time = @vaccine.date + @vaccine.interval
       @meeting.user = @vaccine.pet.user
+      @meeting.pet = @pet
       @meeting.save
       redirect_to pet_path(@pet)
     else

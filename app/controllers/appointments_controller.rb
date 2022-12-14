@@ -29,6 +29,7 @@ class AppointmentsController < ApplicationController
       @meeting.name = @appointment.veterinary_name
       @meeting.start_time = @appointment.date
       @meeting.user = @appointment.pet.user
+      @meeting.pet = @pet
       @meeting.save
       redirect_to pet_path(@pet)
     else
