@@ -1,4 +1,5 @@
-<%= simple_form_for(pet) do |f| %>
+<div class="container">
+  <%= simple_form_for(pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :breed %>
   <%= f.input :birthday %>
@@ -11,4 +12,5 @@
   <%= f.input :specie %>
   <%= f.input :photos, as: :file %>
   <%= f.submit %>
-<% end %>
+  <% end %>
+</div>

@@ -1,12 +1,4 @@
-<nav class="navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <div class="d-flex center">
-     <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: '¿Qué mascota buscas?' %>
-     <%= submit_tag 'Buscar', class: 'btn btn-outline-search' %>
-    </div>
-  </div>
-</nav>
+
 <!--New Navbar-->
 <nav class="navbar2 d-flex justify-content-between">
   <div class="container-fluid">
@@ -27,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="longs d-flex mx-3 gap-3">
+  <div class="longs d-flex mx-3 gap-3 strong">
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
   </div>

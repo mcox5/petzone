@@ -1,2 +1,8 @@
-<h1>Editar tratamiento</h1>
-<%= render "form", pet: @treatment.pet, treatment: @treatment %>
+<div class="container">
+  <%= simple_form_for @treatment do |f| %>
+  <%= f.input :name %>
+  <%= f.input :last_application %>
+  <%= f.input :interval %>
+  <%= f.submit "Guardar tratamiento", class: "btn btn-primary" %>
+<% end %>
+</div>
