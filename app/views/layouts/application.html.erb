@@ -13,12 +13,12 @@
     <script src="https://kit.fontawesome.com/9c77608a3c.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <div class= "d-flex flex-column"style="background-color: rgb(248, 243, 223);">
+  <body class= "d-flex flex-column">
+    <div class="mb-auto" >
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <%= yield %>
-      <%= render "shared/footer" %>
     </div>
   </body>
+  <%= render "shared/footer" %>
 </html>

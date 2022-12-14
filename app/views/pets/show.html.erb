@@ -151,15 +151,14 @@
                 <p class="text-muted mb-0"><%= appointment.doctor_name %></p>
               </div>
               <div class="col-sm-3">
-                <p class="text-muted mb-0">
-                <%= link_to edit_appointment_path(appointment) do %>
-                <i class="fad fa-edit"></i>
+                <span class="text-muted mb-0">
+                <%= link_to edit_appointment_path(appointment), class:"text-decoration-none" do %>
+                <i class="fa-regular fa-pen-to-square text-secondary"></i>
                 <% end %>
-                </p>
-                <%= link_to appointment_path(appointment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fab fa-github mx-3"></i>
+                <%= link_to appointment_path(appointment), class:"text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash text-secondary"></i>
                 <% end %>
-                </p>
+                </span>
               </div>
             </div>
             <hr>
@@ -206,12 +205,11 @@
               </div>
               <div class="col-sm-3">
                 <p class="text-muted mb-0">
-                <%= link_to edit_vaccine_path(vaccine) do %>
-                <i class="fad fa-edit"></i>
+                <%= link_to edit_vaccine_path(vaccine), class:"text-decoration-none" do %>
+                <i class="fa-regular fa-pen-to-square text-secondary"></i>
                 <% end %>
-                </p>
-                <%= link_to vaccine_path(vaccine), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fab fa-github mx-3"></i>
+                <%= link_to vaccine_path(vaccine), class:"text-decoration-none", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fa-trash text-secondary"></i>
                 <% end %>
                 </p>
               </div>
@@ -259,12 +257,11 @@
               </div>
               <div class="col-sm-3">
                 <p class="text-muted mb-0">
-                <%= link_to edit_deworming_path(deworming) do %>
-                <i class="fad fa-edit"></i>
+                <%= link_to edit_deworming_path(deworming), class:"text-decoration-none" do %>
+                <i class="fa-regular fa-pen-to-square text-secondary"></i>
                 <% end %>
-                </p>
                 <%= link_to deworming_path(deworming), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fab fa-github mx-3"></i>
+                <i class="fa-solid fa-trash text-secondary"></i>
                 <% end %>
                 </p>
               </div>
@@ -311,12 +308,11 @@
               </div>
               <div class="col-sm-3">
                 <p class="text-muted mb-0">
-                <%= link_to edit_exam_path(exam) do %>
-                <i class="fad fa-edit"></i>
+                <%= link_to edit_exam_path(exam), class:"text-decoration-none" do %>
+                <i class="fa-regular fa-pen-to-square text-secondary"></i>
                 <% end %>
-                </p>
                 <%= link_to exam_path(exam), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fab fa-github mx-3"></i>
+                <i class="fa-solid fa-trash text-secondary"></i>
                 <% end %>
                 </p>
               </div>
@@ -358,12 +354,11 @@
               </div>
               <div class="col-sm-4">
                 <p class="text-muted mb-0">
-                <%= link_to edit_treatment_path(treatment) do %>
-                <i class="fad fa-edit"></i>
+                <%= link_to edit_treatment_path(treatment), class:"text-decoration-none" do %>
+                <i class="fa-regular fa-pen-to-square text-secondary"></i>
                 <% end %>
-                </p>
                 <%= link_to treatment_path(treatment), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fab fa-github mx-3"></i>
+                <i class="fa-solid fa-trash text-secondary"></i>
                 <% end %>
                 </p>
               </div>

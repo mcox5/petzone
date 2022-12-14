@@ -33,13 +33,21 @@
   color:rgb(32, 29, 29)
 }
 
-.nav-link .active{
-  color: red;
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: var(--bs-nav-pills-link-active-color);
+  background-color: rgb(187, 127, 127);
 }
 
-.nav-pills {
-  --#{$prefix}nav-pills-border-radius: #{$nav-pills-border-radius};
-  --#{bs}nav-pills-link-active-color: #{color(red)};
-  --#{$prefix}nav-pills-link-active-bg: #{$nav-pills-link-active-bg};
+.btn-outline-success {
+  border-color: rgb(187, 127, 127);
+  color: rgb(187, 127, 127);
+  font-weight: bold !important;
+}
 
+.btn-outline-success:hover {
+  border-color: rgb(187, 127, 127);
+  background-color: rgb(187, 127, 127);
+  color: rgb(245, 245, 245);
 }
