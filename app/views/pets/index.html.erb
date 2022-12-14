@@ -1,7 +1,7 @@
-<div class="bg-success p-2 text-dark bg-opacity-25">
-<h1>Bienvenido <%= @pets.first.user.email %></h1>
-<h3>Estas son tus mascotas:</h3>
-    <div class="row">
+<div class="bg-success p-2 text-dark bg-opacity-25 back-body">
+  <h1>Bienvenido <%= @pets.first.user.email %></h1>
+  <h3>Estas son tus mascotas:</h3>
+    <div class="row">++
       <% @pets.each do |pet| %>
       <div class="col-3 col-lg-3">
         <div class="mx-auto ">
@@ -13,15 +13,32 @@
 
             </div>
           <% end %>
-          <div class="card-trip-infos mt-2">
-            <div>
-              <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link" %></h5>
-            </div>
-          </div>
-        </div>
+        <div class="card-trip-infos mt-2">
+      <div>
+        <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link" %></h5>
       </div>
+    </div>
+  </div>
+</div>
       <% end %>
     </div>
+
     <div class="container">
+
+  <div class="container">
+    <h4>Recordatorios</h4>
+    <div class="row">
+        <% @meetings.each do |meeting| %>
+          <div class="col-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><%= meeting.name %> para <%= meeting.name %> </h5>
+                <p class="card-text">Próxima aplicación: <br><%= meeting.start_time.strftime("%d-%m-%Y") %></p>
+                <button>Ver calendario <i class="fa-regular fa-calendar"></i></button>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
     </div>
-</div>
+  </div>
