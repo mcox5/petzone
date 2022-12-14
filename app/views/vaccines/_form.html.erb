@@ -3,6 +3,6 @@ Aca debe ir el form para crear/editar vacuna
 <%= simple_form_for([pet, vaccine]) do |f| %>
   <%= f.input :name %>
   <%= f.input :interval %>
-  <%= f.input :date %>
+  <%= f.input :date, html5:true %>
   <%= f.submit %>
 <% end %>
