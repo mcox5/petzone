@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="card col-10 m-5 p-3 rounded-4">
+    <div class="recrear card col-10 m-5 p-3 rounded-4">
       <h2>Forgot your password?</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -14,7 +14,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Send me reset password instructions" %>
+          <%= f.button :submit, " Send me reset password instructions", class: "btn btn-outline-light rounded-4" %>
         </div>
       <% end %>
 

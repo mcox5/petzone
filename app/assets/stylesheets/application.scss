@@ -13,8 +13,6 @@
 @import "pets/index";
 @import "pets/show";
 @import "pets/new";
-@import "devise/new";
-/*@import "registrations/new";*/
 @import "simple_calendar";
 @import "pages/calendar";
 *{
@@ -27,6 +25,7 @@
 h1,h2,h3,h4{
   font-family: 'Josefin Sans', sans-serif;
 }
+
 
 body {
   height: 100vh;

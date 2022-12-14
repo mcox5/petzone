@@ -1,3 +1,4 @@
+
 <div class="back-style">
   <div class="p-2 text-dark bg-opacity-25">
   <br>
@@ -12,6 +13,7 @@
                 <%= link_to pet_path(pet) do %>
                 <%= cl_image_tag pet.photos.first.key,height: 150, width: 150, crop: :fill, class:"rounded-circle img-fluid hover" %>
                 <% end %>
+
 
               </div>
             <% end %>
