@@ -1,9 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="humano col-6">
-      <img src="https://bit.ly/3iVr0my" alt="">
+    <div class="humano col-6 p-0">
     </div>
-    <div class="card humanos col-5 card rounded-4 mx-5 p-3">
+    <div class="humanos col-6 card rounded-4 p-3">
 
       <h2>Sign up</h2>
 
@@ -20,8 +19,9 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password", class: "rounded-4" } %>
-
-          <%= f.button :submit, "Sign up", class: "cuenta btn-outline-success rounded-4"  %>
+          <div class="d-flex justify-content-center">
+            <%= f.button :submit, "Sign up", class: "botont btn btn-outline-light rounded-4 w-100"  %>
+          </div>
       <% end %>
 
       <%= render "devise/shared/links" %>
