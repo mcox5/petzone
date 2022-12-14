@@ -1,7 +1,9 @@
-<%= simple_form_for([@pet, @exam]) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :date %>
-  <%= f.input :photos, as: :file, input_html: {multiple: true} %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <%= simple_form_for([@pet, @exam]) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :date %>
+    <%= f.input :photos, as: :file, input_html: {multiple: true} %>
+    <%= f.submit %>
+  <% end %>
+</div>
