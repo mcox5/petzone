@@ -35,7 +35,7 @@ class DewormingsController < ApplicationController
     authorize @deworming
     @deworming.update(deworming_params)
     # No need for app/views/pets/update.html.erb
-    redirect_to pet_path(@deworming)
+    redirect_to pet_path(@deworming.pet)
   end
 
   def destroy

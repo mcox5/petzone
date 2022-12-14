@@ -2,8 +2,8 @@
   <%= date %>
 
   <% meetings.each do |meeting| %>
-    <div class="meeting"> 
-      <p><%= meeting.name %></p>
+    <div class="meeting">
+      <p><%= meeting.pet.name %>: <%= meeting.name %></p>
     </div>
   <% end %>
 <% end %>
