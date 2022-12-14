@@ -20,3 +20,26 @@
   width: 100px;
   border-radius: 50%;
 }
+
+
+.nav-pills {
+
+}
+.nav-link {
+  color:rgb(32, 29, 29)
+}
+
+.petsbutton {
+  color:rgb(32, 29, 29)
+}
+
+.nav-link .active{
+  color: red;
+}
+
+.nav-pills {
+  --#{$prefix}nav-pills-border-radius: #{$nav-pills-border-radius};
+  --#{bs}nav-pills-link-active-color: #{color(red)};
+  --#{$prefix}nav-pills-link-active-bg: #{$nav-pills-link-active-bg};
+
+}
