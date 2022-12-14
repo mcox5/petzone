@@ -1,12 +1,12 @@
 
-<div class="back-style">
+<div class="back-style container">
   <div class="p-2 text-dark bg-opacity-25">
     <br>
-      <h1 class="mx-5"><strong>Bienvenido <%= @pets.first.user.email %></strong>  </h1>
+      <h1 class="mx-5"><strong>Bienvenido <%= @pets.first.user.username %></strong>  </h1>
       <h3 class="mx-5">Estas son tus mascotas:</h3>
-        <div class="row m-5">
+        <div class="row m-5 justify-content-around">
           <% @pets.each do |pet| %>
-          <div class="col-2 col-lg-2">
+          <div class="col-3 col-lg-2">
             <div class="mx-auto ">
               <% if pet.photos.first.key.present? %>
                 <div class="d-flex justify-content-center mt-5">
@@ -29,20 +29,20 @@
         <% end %>
   </div>
   <div class="container text-center">
-    <button type="button" class="btn btn-primary align-items-center"><%= link_to "Agrega una mascota", new_pet_path,class:"text-decoration-none text-white" %></button>
+    <%= link_to "Agrega una mascota", new_pet_path,class:"button-newpet" %>
   </div>
   <br>
 
     <div class="container p-3 my-3 back-meetings">
       <h4>Recordatorios</h4>
-      <div class="row">
+      <div class="row justify-content-around">
           <% @three_meetings.each do |meeting| %>
             <div class="col-3 mx-4 my-2">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title"><%= meeting.name %> para <%= meeting.pet.name %> </h5>
                   <p class="card-text">Próxima aplicación: <br><%= meeting.start_time.strftime("%d-%m-%Y") %></p>
-                  <button class="button"> <%=   link_to "Ver calendario", calendar_path, class:"text-decoration-none" %> </button>
+                  <button class="button"> <%=   link_to "Ver calendario", calendar_path, class:"button-home" %> </button>
                 </div>
               </div>
             </div>
