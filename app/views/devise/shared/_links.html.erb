@@ -7,14 +7,18 @@
     </div>
     <div class="col-6 text-end">
       <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-        <div class="crear btn-outline-light rounded-4"><%= link_to "Nueva contraseña?", new_password_path(resource_name) %></div><br />
+          <div class="crear ms-auto btn-outline-light rounded-4"><%= link_to "Nueva contraseña?", new_password_path(resource_name) %></div><br />
       <% end %>
     </div>
   </div>
 </div>
 
     <%- if controller_name != 'sessions' %>
-      <div class="crear btn-outline-light rounded-4"><%= link_to "Log in", new_session_path(resource_name) %></div><br />
+      <%- if controller_name == "registrations" %>
+        <%= link_to "Log in", new_session_path(resource_name), class:"btn btn-outline-light rounded-4" %><br />
+      <% else %>
+        <div class="crear btn-outline-light rounded-4"><%= link_to "Log in", new_session_path(resource_name), class:"crear btn-outline-light rounded-4" %></div><br />
+      <% end %>
     <% end %>
 
     <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
