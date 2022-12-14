@@ -31,7 +31,7 @@ box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .button:before {
- content: "";
+ //content: "";
  position: absolute;
  z-index: -1;
  background: var(--color);
