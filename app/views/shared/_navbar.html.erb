@@ -1,12 +1,4 @@
-<nav class="navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <div class="d-flex center">
-     <%= text_field_tag :query, params[:query], class: 'form-control', placeholder: '¿Qué mascota buscas?' %>
-     <%= submit_tag 'Buscar', class: 'btn btn-outline-search' %>
-    </div>
-  </div>
-</nav>
+
 <!--New Navbar-->
 <nav class="navbar2 d-flex justify-content-between">
   <div class="container-fluid">
@@ -15,11 +7,19 @@
       <a class="navbar-brand" href="#"><span class="fa fa-home"></span><span class="link"> Home</span></a>
       <a class="navbar-brand" href="#"><span class="fa fa-calendar"></span><span class="link"> Calendario</span></a>
       <a class="navbar-brand" href="#"><span class="fa fa-folder"></span><span class="link"> Documentación</span></a>
-      <a class="navbar-brand" href="#"><span class="fa fa-dog"></span><span class="link"> Pets</span></a>
-
+      <div class="dropdown d-inline">
+        <a class="navbar-brand dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-dog"></span><span class="link"> Pets</span></a>
+        <ul class="dropdown-menu">
+          <% if user_signed_in? %>
+            <% current_user.pets.each do |pet| %>
+              <li><%= link_to pet.name, pet_path(pet)%></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="longs d-flex mx-3 gap-3">
+  <div class="longs d-flex mx-3 gap-3 strong">
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
     <%= link_to "Login", new_user_session_path, class: "nav-link" %>
   </div>

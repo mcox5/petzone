@@ -1,5 +1,6 @@
 .login {
   width: inherit;
+  color: white;
 }
 
 .ingreso {
@@ -15,7 +16,7 @@
 }
 
 
-.bontonp {
+.botonp {
   width: 75%;
   height: 50px;
   text-align: center;
@@ -28,6 +29,11 @@
   text-align: center;
   border-radius: 20px;
 }
+
+.fondo{
+  background-image:url("comida-perro_74190-249.jpg")
+}
+
 
 .recuerdo {
   width: 900px;
