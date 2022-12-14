@@ -2,8 +2,10 @@
   <%= date %>
 
   <% meetings.each do |meeting| %>
-    <div class="meeting">
-      <p><%= meeting.pet.name %>: <%= meeting.name %></p>
-    </div>
+    <% if meeting.pet.user == current_user %>
+      <div class="meeting">
+        <p><%= meeting.pet.name %>: <%= meeting.name %></p>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
