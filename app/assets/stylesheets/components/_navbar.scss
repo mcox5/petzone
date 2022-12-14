@@ -9,15 +9,15 @@
 		background: transparent !important;
 		font-size: 18px;
 		transition: 0.2s ease-in-out;
-		&:hover{
-			background-color: rgba(255,255,255,0.2);
-			font-size: 14px;
-			.link {
-				width: 100%;
-				padding: 0 5px 0 5px;
-				visibility: visible;
-				font-size: 14px;
-			}
+		 &:hover{
+		 	background-color: rgba(255,255,255,0.2);
+		 	font-size: 14px;
+		 	.link {
+		 		width: 100%;
+		 		padding: 0 5px 0 5px;
+		 		visibility: visible;
+		 		font-size: 14px;
+		 	}
 		}
 	}
 	.link {
@@ -92,7 +92,7 @@
 		}
 		.dropdown-menu {
 			min-width: 0px !important;
-			width: 100%;
+			width: 100px;
 			background: #ff5858;
 			text-align: center;
 			border-radius: 0;
@@ -100,11 +100,11 @@
 				color: white;
 				font-size: 14px;
 				line-height: 30px;
-				&:hover {
-					color: white;
-					letter-spacing: 1px;
-					background: transparent;
-				}
+			&:hover {
+				color: white;
+				letter-spacing: 1px;
+				background: transparent;
+			}
 			}
 			a {
 				padding: 0 15px 0 15px;

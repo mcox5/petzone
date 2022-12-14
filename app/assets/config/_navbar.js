@@ -2,7 +2,7 @@
 $("li.dropdown").click(function(){
 	if($(this).hasClass("open")) {
 		$(this).find(".dropdown-menu").slideUp("fast");
-		$(this).removeClass("open");
+		//$(this).removeClass("open");
 	}
 	else {
 		$(this).find(".dropdown-menu").slideDown("fast");
@@ -13,7 +13,7 @@ $("li.dropdown").click(function(){
 // Close dropdown on mouseleave
 $("li.dropdown").mouseleave(function(){
 	$(this).find(".dropdown-menu").slideUp("fast");
-	$(this).removeClass("open");
+	//$(this).removeClass("open");
 });
 
 // Navbar toggle
