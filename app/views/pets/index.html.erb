@@ -28,24 +28,25 @@
         </div>
         <% end %>
   </div>
-  <button type="button" class="btn btn-primary align-items-center"><%= link_to "Agrega una mascota", new_pet_path,class:"text-decoration-none text-white" %></button>
+  <div class="container text-center">
+    <button type="button" class="btn btn-primary align-items-center"><%= link_to "Agrega una mascota", new_pet_path,class:"text-decoration-none text-white" %></button>
+  </div>
   <br>
 
     <div class="container p-3 my-3 back-meetings">
       <h4>Recordatorios</h4>
       <div class="row">
-          <% @meetings.each do |meeting| %>
-            <div class="col-3 mx-2 my-2">
+          <% @three_meetings.each do |meeting| %>
+            <div class="col-3 mx-4 my-2">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title"><%= meeting.name %> para <%= meeting.name %> </h5>
+                  <h5 class="card-title"><%= meeting.name %> para <%= meeting.pet.name %> </h5>
                   <p class="card-text">Próxima aplicación: <br><%= meeting.start_time.strftime("%d-%m-%Y") %></p>
                   <button class="button"> <%=   link_to "Ver calendario", calendar_path, class:"text-decoration-none" %> </button>
                 </div>
               </div>
             </div>
           <% end %>
-
       </div>
     </div>
 </div>

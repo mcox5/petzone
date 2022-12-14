@@ -8,6 +8,8 @@ class PetsController < ApplicationController
     else
       @pets = policy_scope(Pet)
     end
+    @three_meetings = (@meetings.sort_by { |meeting| meeting.start_time }).first(3)
+
   end
 
   def show
