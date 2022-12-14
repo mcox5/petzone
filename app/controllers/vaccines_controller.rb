@@ -36,7 +36,7 @@ class VaccinesController < ApplicationController
     authorize @vaccine
     @vaccine.update(vaccine_params)
     # No need for app/views/pets/update.html.erb
-    redirect_to pet_path(@vaccine)
+    redirect_to pet_path(@vaccine.pet)
   end
 
   def destroy

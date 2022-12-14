@@ -20,19 +20,16 @@ class TreatmentsController < ApplicationController
     @treatment.pet = @pet
     @treatment.pet.user = current_user
     authorize @treatment
+    date = @treatment.last_application + @treatment.interval
     if @treatment.save
       10.times do
-        if Meeting.count != 0
-          date = Meeting.last.start_time + @treatment.interval.days
-        else
-          date = @treatment.last_application + @treatment.interval
-        end
         @meeting = Meeting.new
         @meeting.name = @treatment.name
         @meeting.start_time = date
         @meeting.user = @treatment.pet.user
         @meeting.pet_id = @pet.id
         @meeting.save
+        date += @treatment.interval
       end
     # No need for app/views/restaurants/create.html.erb
     # Tener ojo de adonde se tendría que redireccionar
@@ -52,7 +49,7 @@ class TreatmentsController < ApplicationController
     authorize @treatment
     @treatment.update(treatment_params)
     # No need for app/views/pets/update.html.erb
-    redirect_to pet_path(@treatment)
+    redirect_to pet_path(@treatment.pet)
   end
 
   def destroy
