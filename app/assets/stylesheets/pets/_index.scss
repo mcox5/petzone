@@ -9,6 +9,10 @@ background-color:beige ;
 transform: scale(1.05);
 box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
+.button-home{
+color: black;
+text-decoration: none;
+}
 
 .button {
  text-decoration: none;
@@ -64,3 +68,23 @@ box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
   background-color: #BAD36D;
   margin-top: auto;
 }
+
+.button-newpet {
+  text-decoration: none;
+  --color: #BAD36D;
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color .5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+ }
