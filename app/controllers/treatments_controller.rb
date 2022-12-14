@@ -21,6 +21,19 @@ class TreatmentsController < ApplicationController
     @treatment.pet.user = current_user
     authorize @treatment
     if @treatment.save
+      10.times do
+        if Meeting.count != 0
+          date = Meeting.last.start_time + @treatment.interval.days
+        else
+          date = @treatment.last_application + @treatment.interval
+        end
+        @meeting = Meeting.new
+        @meeting.name = @treatment.name
+        @meeting.start_time = date
+        @meeting.user = @treatment.pet.user
+        @meeting.pet_id = @pet.id
+        @meeting.save
+      end
     # No need for app/views/restaurants/create.html.erb
     # Tener ojo de adonde se tendría que redireccionar
       redirect_to pet_path(@pet)

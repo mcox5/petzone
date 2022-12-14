@@ -17,6 +17,7 @@ class DewormingsController < ApplicationController
       @meeting.name = @deworming.name
       @meeting.start_time = @deworming.date + @deworming.interval
       @meeting.user = @deworming.pet.user
+      @meeting.pet = @pet
       @meeting.save
       redirect_to pet_path(@pet)
     else
