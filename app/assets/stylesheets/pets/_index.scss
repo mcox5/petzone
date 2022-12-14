@@ -1,3 +1,6 @@
+.back-style{
+background-color:beige ;
+}
 
 .hover{
   transition: all 0.5s ease-out;
@@ -7,12 +10,9 @@ transform: scale(1.05);
 box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
-.back-body{
-  background: antiquewhite;
-}
-
-button {
- --color: #0d7014;
+.button {
+ text-decoration: none;
+ --color: #BAD36D;
  font-family: inherit;
  display: inline-block;
  width: 8em;
@@ -30,7 +30,7 @@ button {
  color: var(--color);
 }
 
-button:before {
+.button:before {
  content: "";
  position: absolute;
  z-index: -1;
@@ -40,22 +40,27 @@ button:before {
  border-radius: 50%;
 }
 
-button:hover {
+.button:hover {
  color: #fff;
 }
 
-button:before {
+.button:before {
  top: 100%;
  left: 100%;
  transition: all .7s;
 }
 
-button:hover:before {
+.button:hover:before {
  top: -30px;
  left: -30px;
 }
 
-button:active:before {
- background: #0d7014;
+.button:active:before {
+ background: #BAD36D;
  transition: background 0s;
+}
+
+.back-meetings{
+  background-color: #BAD36D;
+  margin-top: auto;
 }

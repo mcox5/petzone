@@ -1,44 +1,47 @@
-<div class="bg-success p-2 text-dark bg-opacity-25 back-body">
-  <h1>Bienvenido <%= @pets.first.user.email %></h1>
-  <h3>Estas son tus mascotas:</h3>
-    <div class="row">++
-      <% @pets.each do |pet| %>
-      <div class="col-3 col-lg-3">
-        <div class="mx-auto ">
-          <% if pet.photos.first.key.present? %>
-            <div class="d-flex justify-content-center mt-5">
-              <%= link_to pet_path(pet) do %>
-              <%= cl_image_tag pet.photos.first.key,height: 150, width: 150, crop: :fill, class:"rounded-circle img-fluid hover" %>
-              <% end %>
+<div class="back-style">
+  <div class="p-2 text-dark bg-opacity-25">
+  <br>
+    <h1 class="mx-5"><strong>Bienvenido <%= @pets.first.user.email %></strong>  </h1>
+    <h3 class="mx-5">Estas son tus mascotas:</h3>
+      <div class="row m-5">
+        <% @pets.each do |pet| %>
+        <div class="col-2 col-lg-2">
+          <div class="mx-auto ">
+            <% if pet.photos.first.key.present? %>
+              <div class="d-flex justify-content-center mt-5">
+                <%= link_to pet_path(pet) do %>
+                <%= cl_image_tag pet.photos.first.key,height: 150, width: 150, crop: :fill, class:"rounded-circle img-fluid hover" %>
+                <% end %>
 
-            </div>
-          <% end %>
-        <div class="card-trip-infos mt-2">
-      <div>
-        <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link" %></h5>
+              </div>
+            <% end %>
+          <div class="card-trip-infos mt-2">
+        <div>
+          <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link" %></h5>
+        </div>
       </div>
     </div>
   </div>
-</div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+  <br>
 
-    <div class="container">
-
-  <div class="container">
-    <h4>Recordatorios</h4>
-    <div class="row">
-        <% @meetings.each do |meeting| %>
-          <div class="col-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title"><%= meeting.name %> para <%= meeting.name %> </h5>
-                <p class="card-text">Próxima aplicación: <br><%= meeting.start_time.strftime("%d-%m-%Y") %></p>
-                <button>Ver calendario <i class="fa-regular fa-calendar"></i></button>
+    <div class="container p-3 my-3 back-meetings">
+      <h4>Recordatorios</h4>
+      <div class="row">
+          <% @meetings.each do |meeting| %>
+            <div class="col-3 mx-2 my-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><%= meeting.name %> para <%= meeting.name %> </h5>
+                  <p class="card-text">Próxima aplicación: <br><%= meeting.start_time.strftime("%d-%m-%Y") %></p>
+                  <button class="button"> <%=   link_to "Ver calendario", calendar_path, class:"text-decoration-none" %> </button>
+                </div>
               </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
 
+      </div>
     </div>
-  </div>
+</div>
+<%# <i class="fa-regular fa-calendar"</i> %>
