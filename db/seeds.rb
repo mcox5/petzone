@@ -4,11 +4,13 @@ puts "creando usuarios"
 
 User.create(
   email: "mcox5@uc.cl",
-  password: "123456"
+  password: "123456",
+  username: "Matias"
 )
 User.create(
   email: "tomasmcasey@gmail.com",
-  password: "123456"
+  password: "123456",
+  username: "Tomi"
 )
 puts "Usuarios creados"
 # 2: Crear Pets (10 pets)
