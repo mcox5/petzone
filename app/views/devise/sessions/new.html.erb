@@ -6,7 +6,7 @@
 
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-      <div class="container">
+      <div class="container login">
           <%= f.input :email,
                     required: false,
                     autofocus: true,

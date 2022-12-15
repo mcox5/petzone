@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :set_pet, only: %i[new create]
+  before_action :set_pet, only: %i[new create ]
   # El index no tiene vista creada ya que mostraremos la info en el show de pets
   def index
     @appointments = policy_scope(Appointment).joins(:pet).where('pet.id = appointment.id')
@@ -30,6 +30,7 @@ class AppointmentsController < ApplicationController
       @meeting.start_time = @appointment.date
       @meeting.user = @appointment.pet.user
       @meeting.pet = @pet
+      @meeting.appointment_id = @appointment.id
       @meeting.save
       redirect_to pet_path(@pet)
     else
@@ -47,7 +48,7 @@ class AppointmentsController < ApplicationController
     authorize @appointment
     @appointment.update(appointment_params)
     # No need for app/views/pets/update.html.erb
-    redirect_to pet_path(@appointment)
+    redirect_to pet_path(@appointment.pet)
   end
 
   def destroy

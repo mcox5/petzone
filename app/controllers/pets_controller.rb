@@ -32,7 +32,6 @@ class PetsController < ApplicationController
     @pet.user = current_user
     authorize @pet
     if @pet.save
-    # No need for app/views/restaurants/create.html.erb
       redirect_to pet_path(@pet)
     else
       render :new, status: :unprocessable_entity
