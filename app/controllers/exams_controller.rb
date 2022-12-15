@@ -50,7 +50,7 @@ class ExamsController < ApplicationController
   private
 
   def exam_params
-    params.require(:exam).permit(:name, :description, :date, :photos)
+    params.require(:exam).permit(:name, :description, :date, photos: [])
   end
 
   def set_pet
