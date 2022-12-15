@@ -1,9 +1,9 @@
 <div class="container">
   <%= simple_form_for @treatment do |f| %>
-  <%= f.input :name %>
-  <%= f.input :last_application %>
-  <%= f.input :until , html5:true %>
-  <%= f.input :interval %>
-  <%= f.submit "Guardar tratamiento", class: "btn btn-primary" %>
+  <%= f.input :name,label:"Nombre del tratamiento",placeholder:"Pastilla para artrosis" %>
+  <%= f.input :until,label:"Fecha de inicio" , html5:true %>
+  <%= f.input :last_application, label:"Ultima aplicación" %>
+  <%= f.input :interval,label:"Tiempo entre aplicaciones en días",placeholder:"5" %>
+  <%= f.submit "Guardar tratamiento" %>
 <% end %>
 </div>
