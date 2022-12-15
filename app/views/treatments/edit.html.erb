@@ -2,6 +2,7 @@
   <%= simple_form_for @treatment do |f| %>
   <%= f.input :name %>
   <%= f.input :last_application %>
+  <%= f.input :until , html5:true %>
   <%= f.input :interval %>
   <%= f.submit "Guardar tratamiento", class: "btn btn-primary" %>
 <% end %>
