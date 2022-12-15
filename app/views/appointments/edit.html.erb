@@ -1,8 +1,12 @@
 <div class="container">
-  <%= simple_form_for(@appointment) do |f| %>
-    <%= f.input :veterinary_name,label:"Nombre de veterinaria",placeholder:"Nueva Era" %>
-    <%= f.input :doctor_name, label:"Nombre del doctor",placeholder:"Máximo Cabal" %>
-    <%= f.input :date, html5:true, label:"Fecha de cita" %>
-    <%= f.submit "Agregar" %>
-  <% end %>
+  <div class="row justify-content-center">
+    <div class="card editar col-12 m-5 p-3 rounded-4">
+      <%= simple_form_for(@appointment) do |f| %>
+        <%= f.input :veterinary_name,label:"Nombre de veterinaria",placeholder:"Nueva Era" %>
+        <%= f.input :doctor_name, label:"Nombre del doctor",placeholder:"Máximo Cabal" %>
+        <%= f.input :date, html5:true, label:"Fecha de cita" %>
+        <%= f.submit "Agregar", class:"btn btn-outline-success" %>
+      <% end %>
+    </div>
+  </div>
 </div>
