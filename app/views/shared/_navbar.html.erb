@@ -1,9 +1,9 @@
 
 <!--New Navbar-->
 <nav class="navbar2 d-flex justify-content-between">
-  <div class="container-fluid">
+  <div class="mt-2 mx-2">
     <!-- Nav Header -->
-    <div class="navbar-header">
+    <div class="navbar-expand-sm">
       <a class="navbar-brand" href="<%=root_path%>"><span class="fa fa-home"></span><span class="link"> Home</span></a>
       <a class="navbar-brand" href="<%=calendar_path%>"><span class="fa fa-calendar"></span><span class="link"> Calendario</span></a>
       <div class="dropdown d-inline">
@@ -18,8 +18,11 @@
       </div>
     </div>
   </div>
-  <div class="longs d-flex mx-3 gap-3 strong">
+  <div class="letter justify-content-center mt-2">
+    <h5>Petzone</h5>
+  </div>
+  <div class="letter longs d-flex mt-2 gap-3 strong">
     <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <%= link_to "Login", new_user_session_path, class: "dropdown-item" %>
   </div>
 </nav>
