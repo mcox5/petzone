@@ -2,7 +2,7 @@
   <%= simple_form_for([pet, deworming]) do |f| %>
     <%= f.input :name %>
     <%= f.input :interval %>
-    <%= f.input :date %>
+    <%= f.input :date, html5:true %>
     <%= f.submit %>
   <% end %>
 </div>

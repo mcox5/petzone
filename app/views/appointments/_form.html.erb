@@ -3,7 +3,7 @@
   <%= simple_form_for([pet, appointment]) do |f| %>
     <%= f.input :veterinary_name %>
     <%= f.input :doctor_name %>
-    <%= f.input :date %>
+    <%= f.input :date, html5:true %>
     <%= f.submit %>
   <% end %>
 </div>
