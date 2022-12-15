@@ -85,6 +85,7 @@
 			}
 			.dropdown-toggle {
 				font-size: 14px;
+        color: white
 			}
 			.fa-caret-down {
 				transform: rotate(180deg);
@@ -93,7 +94,8 @@
 		.dropdown-menu {
 			min-width: 0px !important;
 			width: 100px;
-			background: rgb(187, 127, 127);
+
+			background: #FAAF6B;
 			text-align: center;
 			border-radius: 6%;
 			li, a {
@@ -111,4 +113,7 @@
 			}
 		}
 	}
+}
+.letter {
+  color: white;
 }
