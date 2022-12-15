@@ -21,8 +21,9 @@ class TreatmentsController < ApplicationController
     @treatment.pet.user = current_user
     authorize @treatment
     date = @treatment.last_application + @treatment.interval
+    number_of_mettings = ((@treatment.until - @treatment.last_application)/(@treatment.interval))
     if @treatment.save
-      10.times do
+      (number_of_mettings).to_i.times do
         @meeting = Meeting.new
         @meeting.name = @treatment.name
         @meeting.start_time = date
@@ -64,7 +65,7 @@ class TreatmentsController < ApplicationController
   private
 
   def treatment_params
-    params.require(:treatment).permit(:name, :last_application, :interval)
+    params.require(:treatment).permit(:name, :last_application, :interval, :until)
   end
 
   def set_pet
