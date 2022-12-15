@@ -2,7 +2,7 @@
   <%= simple_form_for([pet, deworming]) do |f| %>
     <%= f.input :name, label:"Nombre" %>
     <%= f.input :interval, label:"Tiempo entre aplicaciones en días" %>
-    <%= f.input :date, label:"Fecha de aplicación" %>
+    <%= f.input :date, html5:true, label:"Fecha de aplicación" %>
     <%= f.submit %>
   <% end %>
 </div>
