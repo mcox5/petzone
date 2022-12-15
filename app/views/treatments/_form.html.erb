@@ -2,8 +2,8 @@
   <%= simple_form_for [pet, treatment] do |f| %>
 
   <%= f.input :name,label:"Nombre del tratamiento",placeholder:"Pastilla para artrosis" %>
-  <%= f.input :until,label:"Fecha de inicio" , html5:true %>
-  <%= f.input :last_application, label:"Ultima aplicación" %>
+  <%= f.input :last_application, label:"Ultima aplicación hecha", html5:true %>
+  <%= f.input :until,label:"Fecha de termino tratamiento" , html5:true %>
   <%= f.input :interval,label:"Tiempo en días entre aplicaciones",placeholder:"5" %>
   <%= f.submit "Guardar tratamiento", class:"btn btn-outline-success" %>
 

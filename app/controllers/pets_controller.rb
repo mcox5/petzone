@@ -8,7 +8,13 @@ class PetsController < ApplicationController
     else
       @pets = policy_scope(Pet)
     end
-    @three_meetings = (@meetings.sort_by { |meeting| meeting.start_time }).first(3)
+    @user_mettings = []
+    @meetings.each do |meeting|
+      if meeting.pet.user == current_user
+        @user_mettings.push(meeting)
+      end
+    end
+    @three_meetings = (@user_mettings.sort_by { |meeting| meeting.start_time }).first(3)
 
   end
 
