@@ -1,16 +1,16 @@
 <div class="container">
   <%= simple_form_for(pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :breed %>
-  <%= f.input :birthday %>
-  <%= f.input :gender, collection: %w[Macho Hembra] %>
-  <%= f.input :weight %>
-  <%= f.input :spayed %>
-  <%= f.input :allergies%>
-  <%= f.input :color %>
-  <%= f.input :chiped %>
-  <%= f.input :specie %>
-  <%= f.input :photos, as: :file %>
-  <%= f.submit %>
+  <%= f.input :name, label:"Nombre",placeholder:"Lucky" %>
+  <%= f.input :specie, label:"Especie",placeholder:"Perro" %>
+  <%= f.input :breed, label:"Raza",placeholder:"Golden Retriever" %>
+  <%= f.input :birthday, label:"Fecha de nacimiento" %>
+  <%= f.input :gender, label:"Sexo", collection: %w[Macho Hembra] %>
+  <%= f.input :weight, label:"Peso(kg)",placeholder:"25" %>
+  <%= f.input :spayed, label:"Esterilizado" %>
+  <%= f.input :allergies, label:"Alergias",placeholder:"Dermatitis atópica"%>
+  <%= f.input :color, label:"Color",placeholder:"Dorado" %>
+  <%= f.input :chiped, label:"¿Tiene chip?"%>
+  <%= f.input :photos, label:"Foto", as: :file %>
+  <%= f.submit "Agregar mascota", class:"btn btn-outline-success" %>
   <% end %>
 </div>

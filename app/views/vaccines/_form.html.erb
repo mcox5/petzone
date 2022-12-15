@@ -1,8 +1,9 @@
-Aca debe ir el form para crear/editar vacuna
 
 <%= simple_form_for([pet, vaccine]) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :interval %>
-  <%= f.input :date, html5:true %>
-  <%= f.submit %>
+  <%= f.input :name, label:"Nombre",placeholder:"Rabia canina" %>
+  <%= f.input :interval,label:"Tiempo entre aplicaciones",placeholder:"Tiempo en días" %>
+  <%= f.input :date,label:"Fecha de aplicación", html5:true %>
+
+  <%= f.submit "Guardar vacuna", class:"btn btn-outline-success"%>
+
 <% end %>
