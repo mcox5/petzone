@@ -1,25 +1,30 @@
 
 <!--New Navbar-->
-<nav class="navbar2 d-flex justify-content-between">
+<nav class="navbar2 d-flex justify-content-between p-3">
   <div class="container-fluid">
     <!-- Nav Header -->
     <div class="navbar-header">
       <a class="navbar-brand" href="<%=root_path%>"><span class="fa fa-home"></span><span class="link"> Home</span></a>
       <a class="navbar-brand" href="<%=calendar_path%>"><span class="fa fa-calendar"></span><span class="link"> Calendario</span></a>
       <div class="dropdown d-inline">
-        <a class="navbar-brand dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-dog"></span><span class="link"> Pets</span></a>
+        <a class="navbar-brand dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="fa fa-dog"></span><span class="link">Pets</span></a>
         <ul class="dropdown-menu">
           <% if user_signed_in? %>
             <% current_user.pets.each do |pet| %>
-              <li><%= link_to pet.name, pet_path(pet)%></li>
+              <li><%= link_to pet.name, pet_path(pet), class: "nav-link"%></li>
             <% end %>
           <% end %>
+          <li><%= link_to "Ver todas", pets_path%></li>
         </ul>
       </div>
     </div>
   </div>
   <div class="longs d-flex mx-3 gap-3 strong">
-    <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-    <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% if user_signed_in? %>
+      <%= current_user.username %>
+      <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+    <% end %>
   </div>
 </nav>
