@@ -1,7 +1,7 @@
 
 <%= simple_form_for([pet, vaccine]) do |f| %>
-  <%= f.input :name, label:"Nombre" %>
+  <%= f.input :name, label:"Nombre",placeholder:"Rabia canina" %>
   <%= f.input :interval,label:"Tiempo entre aplicaciones",placeholder:"Tiempo en días" %>
   <%= f.input :date,label:"Fecha de aplicación", html5:true %>
-  <%= f.submit %>
+  <%= f.submit "Agregar" %>
 <% end %>

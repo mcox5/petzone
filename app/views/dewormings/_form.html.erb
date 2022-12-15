@@ -1,8 +1,8 @@
 <div class="container">
   <%= simple_form_for([pet, deworming]) do |f| %>
-    <%= f.input :name, label:"Nombre" %>
-    <%= f.input :interval, label:"Tiempo entre aplicaciones en días" %>
+    <%= f.input :name, label:"Nombre",placeholder:"Antiparasitario Interno Total Full CG Perros Y Gatos - 15 Cc" %>
+    <%= f.input :interval, label:"Tiempo entre aplicaciones en días",placeholder:"150" %>
     <%= f.input :date, html5:true, label:"Fecha de aplicación" %>
-    <%= f.submit %>
+    <%= f.submit "Agregar" %>
   <% end %>
 </div>
