@@ -1,20 +1,23 @@
-
-<div class="back-style container">
-  <div class="p-2 text-dark bg-opacity-25">
+<div class="container">
+  <div class="p-2 text-dark">
     <br>
-      <h1 class="mx-5"><strong>Bienvenido <%= @pets.first.user.username %></strong>  </h1>
+      <h1 class="mx-5"><strong>Bienvenido <%= current_user.username %></strong>  </h1>
       <h3 class="mx-5">Estas son tus mascotas:</h3>
         <div class="row m-5 justify-content-around">
           <% @pets.each do |pet| %>
           <div class="col-3 col-lg-2">
             <div class="mx-auto ">
-              <% if pet.photos.first.key.present? %>
+              <% unless pet.photos.empty? %>
                 <div class="d-flex justify-content-center mt-5">
                   <%= link_to pet_path(pet) do %>
                   <%= cl_image_tag pet.photos.first.key,height: 150, width: 150, crop: :fill, class:"rounded-circle img-fluid hover" %>
                   <% end %>
-
-
+                </div>
+                <% else %>
+                <div class="d-flex justify-content-center mt-5">
+                  <%= link_to pet_path(pet) do %>
+                  <%= image_tag asset_path("pet-sin-imagen"),height: 150, width: 150, class:"rounded-circle img-fluid hover" %>
+                  <% end %>
                 </div>
               <% end %>
             <div class="card-trip-infos mt-2">

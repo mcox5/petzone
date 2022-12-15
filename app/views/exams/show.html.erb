@@ -4,10 +4,17 @@
 <div class="container d-flex justify-content-center text-center align-items-center mt-3">
   <div class="card rounded-3" style="width: 35rem;overflow: hidden; border-radius: 10% !important;">
     <%#= cl_image_tag @exam.photos.first, class:"card-img-top" %>
-    <% if @exam.photos.first.key.present? %>
+    <% unless @exam.photos.empty? %>
       <% @exam.photos.each do |photo|  %>
       <%= cl_image_tag photo.key %>
       <% end %>
+    <div class="card-body m-3">
+      <h5 class="card-title"><%= @exam.name %></h5>
+      <p class="card-text"><%= @exam.description %></p>
+      <p class="card-text"><%= @exam.date %></p>
+    </div>
+    <% else %>
+    <%= image_tag asset_path("hospitalG") %>
     <div class="card-body  m-3">
       <h5 class="card-title"><%= @exam.name %></h5>
       <p class="card-text"><%= @exam.description %></p>
