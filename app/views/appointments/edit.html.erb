@@ -1,8 +1,8 @@
 <div class="container">
   <%= simple_form_for(@appointment) do |f| %>
-    <%= f.input :veterinary_name %>
-    <%= f.input :doctor_name %>
-    <%= f.input :date %>
-    <%= f.submit %>
+    <%= f.input :veterinary_name,label:"Nombre de veterinaria",placeholder:"Nueva Era" %>
+    <%= f.input :doctor_name, label:"Nombre del doctor",placeholder:"Máximo Cabal" %>
+    <%= f.input :date, html5:true, label:"Fecha de cita" %>
+    <%= f.submit "Agregar" %>
   <% end %>
 </div>

@@ -1,9 +1,9 @@
 <div class="container">
   <%= simple_form_for(@exam) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :date %>
-  <%= f.input :photos, as: :file %>
-  <%= f.submit %>
+  <%= f.input :name,label:"Nombre del estudio",placeholder:"Radiografía de pata trasera" %>
+  <%= f.input :description,label:"Descripción",placeholder:"Fractura" %>
+  <%= f.input :date, html5:true, label:"Fecha" %>
+  <%= f.input :photos, as: :file, input_html: {multiple: true},label:"Foto" %>
+  <%= f.submit "Agregar" %>
   <% end %>
 </div>

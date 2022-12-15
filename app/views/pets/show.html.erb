@@ -1,5 +1,5 @@
 <div class="container text-center mt-4">
-  <h2>Información de <%= @pet.name %></h2>
+  <h1>Información de <%= @pet.name %></h1>
 </div>
 
 <div class="d-flex align-items-start container">
@@ -8,7 +8,7 @@
     <button class="nav-link active" id="v-pills-info-tab" data-bs-toggle="pill" data-bs-target="#v-pills-info" type="button" role="tab" aria-controls="v-pills-info" aria-selected="true">Información General</button>
     <button class="nav-link" id="v-pills-citas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-citas" type="button" role="tab" aria-controls="v-pills-citas" aria-selected="false">Citas médicas</button>
     <button class="nav-link" id="v-pills-vacunas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-vacunas" type="button" role="tab" aria-controls="v-pills-vacunas" aria-selected="false">Vacunas</button>
-    <button class="nav-link" id="v-pills-desparacitaciones-tab" data-bs-toggle="pill" data-bs-target="#v-pills-desparacitaciones" type="button" role="tab" aria-controls="v-pills-desparacitaciones" aria-selected="false">Desparacitaciones</button>
+    <button class="nav-link" id="v-pills-desparacitaciones-tab" data-bs-toggle="pill" data-bs-target="#v-pills-desparacitaciones" type="button" role="tab" aria-controls="v-pills-desparacitaciones" aria-selected="false">Desparacitaciones / Antipulgas</button>
     <button class="nav-link" id="v-pills-examenes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-examenes" type="button" role="tab" aria-controls="v-pills-examenes" aria-selected="false">Examenes</button>
     <button class="nav-link" id="v-pills-tratamientos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tratamientos" type="button" role="tab" aria-controls="v-pills-tratamientos" aria-selected="false">Tratamientos</button>
     <button class="nav-link" id="v-pills-pets-tab" data-bs-toggle="pill" data-bs-target="#v-pills-pets" type="button" role="tab" aria-controls="v-pills-pets" aria-selected="false"><%= link_to "Volver a tus mascotas", pets_path, class:"text-decoration-none petsbutton" %></button>
@@ -17,7 +17,7 @@
   <div class="tab-content col-9" id="v-pills-tabContent">
     <div class="tab-pane fade show active" id="v-pills-info" role="tabpanel" aria-labelledby="v-pills-info-tab" tabindex="0">
       <div class="col-lg-8">
-        <div class="card mb-4">
+        <div class="card card-index mb-4">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-6">
@@ -120,9 +120,8 @@
 
 <%# Contenido Citas %>
     <div class="tab-pane fade" id="v-pills-citas" role="tabpanel" aria-labelledby="v-pills-citas-tab" tabindex="0">
-      <h3>Citas</h3>
       <div class="col-lg-8">
-        <div class="card mb-4">
+        <div class="card mb-4 card-index">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
@@ -172,10 +171,10 @@
     <%# Contenido Vacunas %>
     <div class="tab-pane fade" id="v-pills-vacunas" role="tabpanel" aria-labelledby="v-pills-vacunas-tab" tabindex="0">
 
-      <h3>Vacunas</h3>
+
 
       <div class="col-lg-8">
-        <div class="card mb-4">
+        <div class="card mb-4 card-index">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
@@ -225,9 +224,8 @@
 
 <%# Contenido Desparacitaciones %>
     <div class="tab-pane fade" id="v-pills-desparacitaciones" role="tabpanel" aria-labelledby="v-pills-desparacitaciones-tab" tabindex="0">
-      <h3>Desparacitaciones</h3>
       <div class="col-lg-8">
-        <div class="card mb-4">
+        <div class="card mb-4 card-index">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
@@ -276,9 +274,9 @@
 
 <%# Contenido Examenes %>
     <div class="tab-pane fade" id="v-pills-examenes" role="tabpanel" aria-labelledby="v-pills-examenes-tab" tabindex="0">
-      <h3>Examenes</h3>
+
       <div class="col-lg-8">
-        <div class="card mb-4">
+        <div class="card mb-4 card-index">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
@@ -327,10 +325,10 @@
 
 <%# Contenido Tratamientos %>
     <div class="tab-pane fade" id="v-pills-tratamientos" role="tabpanel" aria-labelledby="v-pills-tratamientos-tab" tabindex="0">
-      <h3>Tratamientos</h3>
+
 
       <div class="col-lg-8">
-        <div class="card mb-4">
+        <div class="card mb-4 card-index">
           <div class="card-body">
             <div class="row">
               <div class="col-sm-4">
