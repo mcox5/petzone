@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_14_185634) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_15_142604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -80,8 +80,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_185634) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "pet_id", null: false
+    t.bigint "vaccine_id"
+    t.bigint "deworming_id"
+    t.bigint "treatment_id"
+    t.bigint "appointment_id"
+    t.index ["appointment_id"], name: "index_meetings_on_appointment_id"
+    t.index ["deworming_id"], name: "index_meetings_on_deworming_id"
     t.index ["pet_id"], name: "index_meetings_on_pet_id"
+    t.index ["treatment_id"], name: "index_meetings_on_treatment_id"
     t.index ["user_id"], name: "index_meetings_on_user_id"
+    t.index ["vaccine_id"], name: "index_meetings_on_vaccine_id"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -139,8 +147,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_14_185634) do
   add_foreign_key "appointments", "pets"
   add_foreign_key "dewormings", "pets"
   add_foreign_key "exams", "pets"
+  add_foreign_key "meetings", "appointments"
+  add_foreign_key "meetings", "dewormings"
   add_foreign_key "meetings", "pets"
+  add_foreign_key "meetings", "treatments"
   add_foreign_key "meetings", "users"
+  add_foreign_key "meetings", "vaccines"
   add_foreign_key "pets", "users"
   add_foreign_key "treatments", "pets"
   add_foreign_key "vaccines", "pets"

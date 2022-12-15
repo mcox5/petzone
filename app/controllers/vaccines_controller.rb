@@ -19,6 +19,7 @@ class VaccinesController < ApplicationController
       @meeting.start_time = @vaccine.date + @vaccine.interval
       @meeting.user = @vaccine.pet.user
       @meeting.pet = @pet
+      @meeting.vaccine_id = @vaccine.id
       @meeting.save
       redirect_to pet_path(@pet)
     else
@@ -41,6 +42,7 @@ class VaccinesController < ApplicationController
 
   def destroy
     @vaccine = Vaccine.find(params[:id])
+    @meeting = Meeting.where(vaccine_id: @vaccine.id)
     @pet = @vaccine.pet
     authorize @vaccine
     @vaccine.destroy

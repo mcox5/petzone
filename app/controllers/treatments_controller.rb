@@ -28,6 +28,7 @@ class TreatmentsController < ApplicationController
         @meeting.start_time = date
         @meeting.user = @treatment.pet.user
         @meeting.pet_id = @pet.id
+        @meeting.treatment_id = @treatment.id
         @meeting.save
         date += @treatment.interval
       end
