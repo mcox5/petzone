@@ -23,6 +23,7 @@ default: &default
 
 development:
   <<: *default
+  adapter: postgresql
   database: petzone_development
 
   # The specified database role being used to connect to postgres.
