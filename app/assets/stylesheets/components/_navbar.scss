@@ -93,11 +93,11 @@
 		.dropdown-menu {
 			min-width: 0px !important;
 			width: 100px;
-			background: #ff5858;
+			background: rgb(187, 127, 127);
 			text-align: center;
-			border-radius: 0;
+			border-radius: 6%;
 			li, a {
-				color: white;
+				color: rgb(255, 255, 255);
 				font-size: 14px;
 				line-height: 30px;
 			&:hover {
