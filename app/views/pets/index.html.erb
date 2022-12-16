@@ -1,8 +1,8 @@
 <div class="container">
   <div class="p-2 text-dark">
     <br>
-      <h1 class="mx-4 my-3" style="font-size:65px;"><strong>Bienvenido <%= current_user.username %></strong> </h1>
-      <h3 class="mx-5 p-4" style="font-weight:bolder">Estas son tus mascotas:</h3>
+      <h1 class="mx-4 my-3 nombre-perrito" ><strong>Bienvenido <%= current_user.username %></strong> </h1>
+      <h3 class="mx-5 p-4" style="font-weight:bolder;font-size:37px;text-shadow: 0.5px 0.5px 1px black;">Estas son tus mascotas:</h3>
         <div class="row m-5 justify-content-around">
           <% @pets.each do |pet| %>
           <div class="col-3 col-lg-2">
@@ -22,16 +22,17 @@
               <% end %>
             <div class="card-trip-infos mt-2">
               <div>
-                <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link" %></h5>
+                <h5 class="card-title text-center"><%= link_to pet.name, pet_path(pet), class: "nav-link",style:"font-size:30px;font-weight:bold;text-shadow: 0.25px 0.25px 0.25px black;" %></h5>
               </div>
             </div>
           </div>
         </div>
         <% end %>
+        <div class="container text-center mt-4 p-5">
+          <%= link_to "Agregar mascota", new_pet_path,class:"btn btn-outline-success",style:"font-size:30px;text-shadow: 0.25px 0.25px 0.25px black;" %>
+        </div>
   </div>
-  <div class="container text-center">
-    <%= link_to "Agregar mascota", new_pet_path,class:"btn btn-outline-success",style:"color:black" %>
-  </div>
+
   <br>
 
     <div class="container p-3 my-5 back-meetings">

@@ -20,8 +20,23 @@
   width: 100px;
   border-radius: 50%;
 }
+.nombre-perrito{
+  font-size: 65px;
+  color: tomato ;
+  font-weight: bold;
+  text-shadow: 1.5px 1.5px 1.5px black;
+}
+.texto-side{
+  font-size: 18px;
+  font-weight: bolder;
+}
 
-
+.container-side{
+  border-radius: 21px;
+  background: #ebeaea;
+  box-shadow:  5px 5px 10px #dfdddd,
+               -5px -5px 10px #cfcccc;
+}
 .nav-pills {
 
 }
@@ -42,7 +57,7 @@
 
 .btn-outline-success {
   border-color: rgb(187, 127, 127);
-  color: rgb(187, 127, 127);
+  color: black;
   font-weight: bold !important;
 }
 
