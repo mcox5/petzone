@@ -3,12 +3,12 @@ require "open-uri"
 puts "creando usuarios"
 
 matias = User.create!(
-    email: "mcox5@uc.cl",
+    email: "mcox55@uc.cl",
     password: "123456",
     username: "Matias"
   )
 tomi = User.create!(
-    email: "tomasmcasey@gmail.com",
+    email: "tomasmcasey2@gmail.com",
     password: "123456",
     username: "Tomi"
   )
