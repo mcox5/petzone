@@ -2,12 +2,12 @@
 require "open-uri"
 puts "creando usuarios"
 
-matias = User.create(
+matias = User.create!(
     email: "mcox5@uc.cl",
     password: "123456",
     username: "Matias"
   )
-tomi = User.create(
+tomi = User.create!(
     email: "tomasmcasey@gmail.com",
     password: "123456",
     username: "Tomi"
@@ -26,9 +26,9 @@ lara = Pet.new(
   allergies: "alergia a los ojos",
   color: "cafe claro",
   chiped: true,
-  specie: "dog",
-  user_id: matias.id
+  specie: "dog"
 )
+lara.user = matias
 foto_lara = File.open(Rails.root.join(("app/assets/images/Foto Lara.jpg")))
 lara.photos.attach(io: foto_lara, filename: "nes.png", content_type: "image/jpg" )
 lara.save!
@@ -43,9 +43,9 @@ donald = Pet.new(
   allergies: "ninguna",
   color: "blanco",
   chiped: false,
-  specie: "dog",
-  user_id: matias.id
+  specie: "dog"
 )
+donald.user = matias
 foto_donald = File.open(Rails.root.join(("app/assets/images/Donald.JPG")))
 donald.photos.attach(io: foto_donald, filename: "nes.png", content_type: "image/jpg" )
 donald.save!
