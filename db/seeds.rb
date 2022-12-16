@@ -60,7 +60,7 @@ puts "creando Appointments"
   appointment = Appointment.new(
     veterinary_name: Faker::Company.name,
     doctor_name: Faker::Name.name,
-    pet_id: rand(1..2),
+    pet_id: [lara.id, donald.id].sample,
     date: Faker::Date.between(from: '2021-02-23', to: '2022-5-23')
   )
   appointment.save!
@@ -79,14 +79,14 @@ vaccine_name.each do |vaccine|
     name: vaccine,
     interval: [120, 150, 90].sample,
     date: Faker::Date.between(from: '2022-11-23', to: '2022-08-23'),
-    pet_id: 1
+    pet_id: lara.id
   )
   new_vaccine.save!
   new_vaccine_2 = Vaccine.new(
     name: vaccine,
     interval: [120, 150, 90].sample,
     date: Faker::Date.between(from: '2022-11-23', to: '2022-08-23'),
-    pet_id: 2
+    pet_id: donald.id
   )
   new_vaccine_2.save!
 end
@@ -102,7 +102,7 @@ deworming_name.each do |deworming|
     name: deworming,
     interval: rand(3..100),
     date: Faker::Date.between(from: '2021-02-23', to: '2021-11-23'),
-    pet_id: rand(1..2)
+    pet_id: [lara.id, donald.id].sample
   )
   new_deworming.save!
 end
