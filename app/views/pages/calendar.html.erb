@@ -3,7 +3,7 @@
 
   <% meetings.each do |meeting| %>
     <% if meeting.pet.user == current_user %>
-      <div class="meeting">
+      <div class="meeting m-1">
         <p><%= meeting.pet.name %>: <%= meeting.name %></p>
       </div>
     <% end %>
