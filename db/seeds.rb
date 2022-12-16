@@ -2,16 +2,16 @@
 require "open-uri"
 puts "creando usuarios"
 
-User.create(
-  email: "mcox5@uc.cl",
-  password: "123456",
-  username: "Matias"
-)
-User.create(
-  email: "tomasmcasey@gmail.com",
-  password: "123456",
-  username: "Tomi"
-)
+matias = User.create(
+    email: "mcox5@uc.cl",
+    password: "123456",
+    username: "Matias"
+  )
+tomi = User.create(
+    email: "tomasmcasey@gmail.com",
+    password: "123456",
+    username: "Tomi"
+  )
 puts "Usuarios creados"
 # 2: Crear Pets (10 pets)
 puts "Creando Perros..."
@@ -27,7 +27,7 @@ lara = Pet.new(
   color: "cafe claro",
   chiped: true,
   specie: "dog",
-  user_id: 1
+  user_id: matias.id
 )
 foto_lara = File.open(Rails.root.join(("app/assets/images/Foto Lara.jpg")))
 lara.photos.attach(io: foto_lara, filename: "nes.png", content_type: "image/jpg" )
@@ -44,31 +44,11 @@ donald = Pet.new(
   color: "blanco",
   chiped: false,
   specie: "dog",
-  user_id: 1
+  user_id: matias.id
 )
 foto_donald = File.open(Rails.root.join(("app/assets/images/Donald.JPG")))
 donald.photos.attach(io: foto_donald, filename: "nes.png", content_type: "image/jpg" )
 donald.save!
-# 10.times do
-#   file = URI.open("https://upload.wikimedia.org/wikipedia/commons/c/c2/Australianshepherd01.jpg")
-#   pet = Pet.new(
-#     name: Faker::Creature::Dog.name,
-#     breed: Faker::Creature::Dog.breed,
-#     birthday: Faker::Date.between(from: '2014-09-23', to: '2021-09-25'),
-#     gender: Faker::Creature::Dog.gender,
-#     weight: Faker::Number.between(from: 1, to: 25),
-#     spayed: Faker::Boolean.boolean,
-#     allergies: "none",
-#     color: "negro con manchas blancas",
-#     specie: "dog",
-#     user_id: rand(1..2)
-#   )
-
-#   pet.photos.attach(io: file, filename: "nes.png", content_type: "image/jpg" )
-
-#   pet.save!
-# end
-
 
 puts "Perros creados"
 # 3: Crear tratamientos (3 tratamientos)
@@ -76,7 +56,7 @@ puts "Perros creados"
 
 # 4: Crear appointments (20 appointments)
 puts "creando Appointments"
-20.times do
+5.times do
   appointment = Appointment.new(
     veterinary_name: Faker::Company.name,
     doctor_name: Faker::Name.name,
